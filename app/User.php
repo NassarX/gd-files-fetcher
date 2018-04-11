@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+	/**
+	 * Get Google Drive token of the user.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+    public function tokens()
+    {
+    	return $this->hasMany(GDToken::class, 'user_id');
+    }
 }
