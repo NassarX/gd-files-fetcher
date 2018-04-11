@@ -36,4 +36,25 @@ class User extends Authenticatable
     {
     	return $this->hasMany(GDToken::class, 'user_id');
     }
+
+	/**
+	 * Get User files.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function files()
+	{
+		return $this->hasMany(UserFiles::class);
+	}
+
+	/**
+	 * Update user files.
+	 *
+	 * @param $files
+	 */
+	public function updateFiles($files)
+	{
+		UserFiles::truncate();
+		UserFiles::insert($files);
+	}
 }
