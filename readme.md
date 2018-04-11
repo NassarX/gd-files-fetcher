@@ -13,9 +13,9 @@ Detailed information on how to obtain your API ID and secret:
 git clone git@github.com:NassarX/gd-files-fetcher.git
 ```
 
-##Install Dependencies
+## Install Dependencies
 ```
-$ composer install
+composer install
 ```
 
 ## Update `.env` file
@@ -23,7 +23,7 @@ $ composer install
 Add the keys you created to your `.env` file. You can copy the [`.env.example`](.env.example) file and fill in the blanks.
 
 ```
-$ cp .env.example .env
+cp .env.example .env
 ```
 
 ```
@@ -37,19 +37,19 @@ from the `.env` file set `DB_DATABASE`, `DB_USERNAME`  and `DB_PASSWORD`
 
 Generate the app key
 ```
-$ php artisan key:generate
+php artisan key:generate
 ```
 
 then run the migrations
 ```
-$ php artisan migrate
+php artisan migrate
 ```
 
 <br>
 finally
 
 ```
-$ php artisan serve
+php artisan serve
 ```
 
 and now, you can access the application by `http://localhost:8000`
