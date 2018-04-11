@@ -92,6 +92,7 @@ class RegisterController extends Controller
 	{
 		return Socialite::driver('google')
 		                ->scopes(['openid', 'profile', 'email', Google_Service_Drive::DRIVE_READONLY])
+						->with(['access_type' => 'offline', 'prompt' => 'consent'])
 		                ->redirect();
 	}
 
