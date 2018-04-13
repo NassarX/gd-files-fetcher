@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::Auth();
+
 Route::get('auth/google', 'Auth\RegisterController@redirectToProvider')->name('auth.google');
 Route::get('auth/google/callback', 'Auth\RegisterController@handleProviderCallback')->name('auth.google.callback');
 
