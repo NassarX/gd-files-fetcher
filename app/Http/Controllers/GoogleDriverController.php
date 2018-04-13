@@ -44,21 +44,9 @@ class GoogleDriverController extends Controller
 
 		    auth()->user()->updateFiles($files);
 
-		    return redirect()->route('gd.files.index');
+		    return redirect()->route('home');
 	    } catch (\Exception $exception) {
 		    session()->flash('error' ,$exception->getMessage());
 	    }
-    }
-
-	/**
-	 * Show User files.
-	 *
-	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-	 */
-    public function index()
-    {
-	    $userFiles = auth()->user()->files()->paginate(10);
-
-	    return view('home', compact('userFiles'));
     }
 }

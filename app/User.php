@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Cache;
 
 class User extends Authenticatable
 {
@@ -56,5 +57,7 @@ class User extends Authenticatable
 	{
 		UserFiles::truncate();
 		UserFiles::insert($files);
+
+		Cache::forget('userFiles_'.auth()->user()->id);
 	}
 }

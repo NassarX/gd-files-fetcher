@@ -31,13 +31,13 @@
                         </thead>
                         <tbody>
                         @if(isset($userFiles))
-                            @foreach($userFiles as $file)
+                            @foreach($userFiles->items() as $file)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $file->title }}</td>
-                                    <td>{{ $file->mime_type }}</td>
-                                    <td>{{ $file->size }} {{ $file->size? '(KB)' : '---' }}</td>
-                                    <td> <a href="{{ $file->download_url }}">download url</a></td>
+                                    <td>{{ $file['title'] }}</td>
+                                    <td>{{ $file['mime_type'] }}</td>
+                                    <td>{{ $file['size'] }} {{ $file['size']? '(KB)' : '---' }}</td>
+                                    <td> <a href="{{ $file['download_url'] }}">download url</a></td>
                                 </tr>
                             @endforeach
                         @endif
